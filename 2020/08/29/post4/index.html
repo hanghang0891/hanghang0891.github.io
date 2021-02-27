@@ -1,0 +1,292 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>如何给使用虚拟机#2 之安装Windows系统 | 保温杯的部落格</title><meta name="keywords" content="虚拟机"><meta name="author" content="保温杯"><meta name="copyright" content="保温杯"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="本文章面向小白，个位大佬请勿吐槽大家好我是保温杯，我又来水文章更新了 下载windows镜像： 访问MSDN网站（一个系统原版镜像下载网站）  登录MSDN，可以使用QQ快速登录哦·~  从windows10,windows8,windows7里选择一个系统，安装过程基本一样。我选择Windows7  复制系统下载ED2K  粘贴到下载工具里（比如迅雷）  等待下载完毕   在虚拟机中安装系统：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何给使用虚拟机#2 之安装Windows系统">
+<meta property="og:url" content="https://blog.1357.ga/2020/08/29/post4/index.html">
+<meta property="og:site_name" content="保温杯的部落格">
+<meta property="og:description" content="本文章面向小白，个位大佬请勿吐槽大家好我是保温杯，我又来水文章更新了 下载windows镜像： 访问MSDN网站（一个系统原版镜像下载网站）  登录MSDN，可以使用QQ快速登录哦·~  从windows10,windows8,windows7里选择一个系统，安装过程基本一样。我选择Windows7  复制系统下载ED2K  粘贴到下载工具里（比如迅雷）  等待下载完毕   在虚拟机中安装系统：">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.ax1x.com/2020/11/08/BoCEJe.jpg">
+<meta property="article:published_time" content="2020-08-29T20:32:10.000Z">
+<meta property="article:modified_time" content="2021-02-27T15:40:39.666Z">
+<meta property="article:author" content="保温杯">
+<meta property="article:tag" content="虚拟机">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/11/08/BoCEJe.jpg"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://blog.1357.ga/2020/08/29/post4/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}
+
+// https://stackoverflow.com/questions/16839698/jquery-getscript-alternative-in-native-javascript
+const getScript = url => new Promise((resolve, reject) => {
+  const script = document.createElement('script')
+  script.src = url
+  script.async = true
+  script.onerror = reject
+  script.onload = script.onreadystatechange = function() {
+    const loadState = this.readyState
+    if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+    script.onload = script.onreadystatechange = null
+    resolve()
+  }
+  document.head.appendChild(script)
+})</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-02-27 15:40:39'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fuckzuoye/fuckzuoye.github.io/css/styl.css"><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/rss.xml" title="保温杯的部落格" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="https://cdn.jsdelivr.net/gh/fuckzuoye/fuckzuoye.github.io/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.jpg'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://1357.ga"><i class="fa-fw iconfont icon-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw iconfont icon-blog"></i><span> 博客</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw iconfont icon-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw iconfont icon-link"></i><span> 链接库</span></a></div><div class="menus_item"><a class="site-page" href="/rss.xml/"><i class="fa-fw iconfont icon-rss"></i><span> 订阅</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw iconfont icon-标签"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw iconfont icon-归档"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://m.1357.ga/"><i class="fa-fw iconfont icon-music"></i><span> 音乐</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://s1.ax1x.com/2020/11/08/BoCEJe.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">保温杯的部落格</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://1357.ga"><i class="fa-fw iconfont icon-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw iconfont icon-blog"></i><span> 博客</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw iconfont icon-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw iconfont icon-link"></i><span> 链接库</span></a></div><div class="menus_item"><a class="site-page" href="/rss.xml/"><i class="fa-fw iconfont icon-rss"></i><span> 订阅</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw iconfont icon-标签"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw iconfont icon-归档"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://m.1357.ga/"><i class="fa-fw iconfont icon-music"></i><span> 音乐</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">如何给使用虚拟机#2 之安装Windows系统</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-08-29T20:32:10.000Z" title="发表于 2020-08-29 20:32:10">2020-08-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-02-27T15:40:39.666Z" title="更新于 2021-02-27 15:40:39">2021-02-27</time></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><strong>本文章面向小白，个位大佬请勿吐槽</strong><br>大家好我是保温杯，我又来<del>水文章</del>更新了</p>
+<h2 id="下载windows镜像："><a href="#下载windows镜像：" class="headerlink" title="下载windows镜像："></a>下载windows镜像：</h2><ol>
+<li><p>访问<a target="_blank" rel="noopener" href="https://next.itellyou.cn/">MSDN</a>网站（一个系统原版镜像下载网站）</p>
+</li>
+<li><p>登录MSDN，可以使用QQ快速登录哦·~</p>
+</li>
+<li><p>从windows10,windows8,windows7里选择一个系统，安装过程基本一样。我选择Windows7<img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/fuckzuoye/fuckimages@latest/2020/08/29/bf653532dba0b23a797f36d3c50f646e.png" style="zoom:33%;" /></p>
+</li>
+<li><p>复制系统下载ED2K<img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/fuckzuoye/fuckimages@latest/2020/08/29/0142ab245b015436671c0ca5dde3c5f8.png"  /></p>
+</li>
+<li><p>粘贴到下载工具里（比如迅雷）<img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/fuckzuoye/fuckimages@latest/2020/08/29/992396b3a02b525bed3adbd9b98d79a1.png" style="zoom: 50%;" /></p>
+</li>
+<li><p>等待下载完毕</p>
+</li>
+</ol>
+<h2 id="在虚拟机中安装系统："><a href="#在虚拟机中安装系统：" class="headerlink" title="在虚拟机中安装系统："></a>在虚拟机中安装系统：</h2><ol>
+<li><p>点击【创建新虚拟机】<img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/fuckzuoye/fuckimages@latest/2020/08/29/af559101ab746fbb24e770bd4a0cbbac.png" style="zoom: 67%;" /></p>
+</li>
+<li><p>点击【安装程序光盘镜像文件】并点击【浏览】</p>
+</li>
+<li><p>选择刚刚下载的.iso文件并点击【打开】<img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/fuckzuoye/fuckimages@latest/2020/08/29/2b95f2ae4c14459eb856d1b92807835c.png" style="zoom: 67%;" /></p>
+</li>
+<li><p>点击【下一步】</p>
+</li>
+<li><p>简易安装的用户名可以随便填，但是尽量不用用默认的<img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/fuckzuoye/fuckimages@latest/2020/08/29/fb0ed3d630b8e7ab27e46fe39dc96530.png"></p>
+</li>
+<li><p>提示”未输入密钥，需要稍后手动激活“点击【是】并点击下一步<img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/fuckzuoye/fuckimages@latest/2020/08/29/4c21c7e94ad531f5ae74de7099a950c3.png"></p>
+</li>
+<li><p>输入虚拟机名称并点击【下一步】<img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/fuckzuoye/fuckimages@latest/2020/08/29/dc9335b57bb71b305c8d25bf481c9d61.png"></p>
+</li>
+<li><p>磁盘容量建议设置为30GB，设置完毕后点击【下一步】<img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/fuckzuoye/fuckimages@latest/2020/08/29/ae8ed4f76e7583f7f3e1272e5089b667.png"></p>
+</li>
+<li><p>点击【完成】<img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/fuckzuoye/fuckimages@latest/2020/08/29/4e81adbe773024f4d222282e8fe38227.png"></p>
+</li>
+<li><p>等待和一杯水的时间让vmware配置磁盘，期间不要点击【取消】哦~<img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/fuckzuoye/fuckimages@latest/2020/08/29/2d964cf26e2b5072d341ff828c1df949.png"></p>
+</li>
+<li><p>然后就一路【下一步】安装Windows就可以了哈~<img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/fuckzuoye/fuckimages@latest/2020/08/29/15ac13bb0983aeea801d0624f5dc7563.png"></p>
+</li>
+</ol>
+<p><strong>OK，搞好咯~</strong></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">保温杯</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://blog.1357.ga/2020/08/29/post4/">https://blog.1357.ga/2020/08/29/post4/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.1357.ga" target="_blank">保温杯的部落格</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">虚拟机</a></div><div class="post_share"><div class="social-share" data-image="https://s1.ax1x.com/2020/11/08/BoCEJe.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/11/06/post5/"><img class="prev-cover" data-lazy-src="https://s1.ax1x.com/2020/11/08/BoMUde.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">如何给pip换个源</div></div></a></div><div class="next-post pull-right"><a href="/2020/07/07/post3/"><img class="next-cover" data-lazy-src="https://s1.ax1x.com/2020/11/08/BoCVRH.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">如何解决Hexo推送失败</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2020/04/29/post2/" title="如何使用虚拟机#1 之安装虚拟机软件"><img class="cover" data-lazy-src="https://s1.ax1x.com/2020/11/08/BoCmQA.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-04-29</div><div class="title">如何使用虚拟机#1 之安装虚拟机软件</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="https://cdn.jsdelivr.net/gh/fuckzuoye/fuckzuoye.github.io/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.jpg'" alt="avatar"/><div class="author-info__name">保温杯</div><div class="author-info__description">我是保温杯，00后蓝孩纸，六年级小学生。课余时间喜欢敲代码、写文章、听音乐😁<br/>👀喜欢本站要记得收藏哦~</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a></div></div><a class="button--animated" id="card-info-btn" href="https://blog.1357.ga/about/"><i class="iconfont icon-About us"></i><span>关于更多</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/fuckzuoye/" target="_blank" title="Github"><i class="iconfont icon-GitHub"></i></a><a class="social-icon" href="https://blog.1357.ga/about#%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F" target="_blank" title="Email"><i class="iconfont icon-Email"></i></a><a class="social-icon" href="https://gitee.com/fuckzuoye" target="_blank" title="Gitee"><i class="iconfont icon-gitee"></i></a><a class="social-icon" href="https://music.163.com/#/user/home?id=1512535797" target="_blank" title="Music"><i class="iconfont icon-网易云"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content"><marquee><font size="5" face="STXingkai"> <font color="#0000FF">转</font> <font color="#FF0000">载</font> <font color="#FF7F00">文</font> <font color="#34A853">章</font> <font color="#9B30FF">请</font> <font color="#00C5CD">注</font> <font color="#D02090">明</font> <font color="#00688B">出</font> <font color="#34A853">处</font> <font color="#9B30FF">哦</font> <font color="#00C5CD">~</font></font></marquee><br/><h3>网站信息：</h3><br/><marquee><a target="_blank" rel="noopener" href="https://hexo.io/"><img src="https://img.shields.io/badge/Powered%20by-Hexo-orange"/></a><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly"><img src="https://img.shields.io/badge/Theme-Butterfly-blueviolet"/></a><a target="_blank" rel="noopener" href="https://www.jsdelivr.com/"><img src="https://img.shields.io/badge/CDN-JsDelivr-red"/></a><a target="_blank" rel="noopener" href="https://vercel.com/"><img src="https://img.shields.io/badge/Hosted-Vercel%20%26%20Fast-cratical"/></a></marquee><br/><h3>全球访客：</h3><script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5kdx4ud60xy&amp;m=0&amp;c=9bfa19&amp;cr1=f7590a&amp;f=arial&amp;l=33&amp;v0=-10&amp;z=11" async="async"></script></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDwindows%E9%95%9C%E5%83%8F%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">下载windows镜像：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%AD%E5%AE%89%E8%A3%85%E7%B3%BB%E7%BB%9F%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">在虚拟机中安装系统：</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/02/27/post7/" title="标题怎么这么难取..."><img data-lazy-src="https://gitee.com/fuckzuoye/image/raw/master/20210227220929.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="标题怎么这么难取..."/></a><div class="content"><a class="title" href="/2021/02/27/post7/" title="标题怎么这么难取...">标题怎么这么难取...</a><time datetime="2021-02-27T22:30:00.000Z" title="发表于 2021-02-27 22:30:00">2021-02-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/01/23/post6/" title="期末考试进行时"><img data-lazy-src="https://gitee.com/fuckzuoye/image/raw/master/20210123154707.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="期末考试进行时"/></a><div class="content"><a class="title" href="/2021/01/23/post6/" title="期末考试进行时">期末考试进行时</a><time datetime="2021-01-23T15:29:37.000Z" title="发表于 2021-01-23 15:29:37">2021-01-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/11/06/post5/" title="如何给pip换个源"><img data-lazy-src="https://s1.ax1x.com/2020/11/08/BoMUde.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="如何给pip换个源"/></a><div class="content"><a class="title" href="/2020/11/06/post5/" title="如何给pip换个源">如何给pip换个源</a><time datetime="2020-11-06T18:38:50.000Z" title="发表于 2020-11-06 18:38:50">2020-11-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/08/29/post4/" title="如何给使用虚拟机#2 之安装Windows系统"><img data-lazy-src="https://s1.ax1x.com/2020/11/08/BoCEJe.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="如何给使用虚拟机#2 之安装Windows系统"/></a><div class="content"><a class="title" href="/2020/08/29/post4/" title="如何给使用虚拟机#2 之安装Windows系统">如何给使用虚拟机#2 之安装Windows系统</a><time datetime="2020-08-29T20:32:10.000Z" title="发表于 2020-08-29 20:32:10">2020-08-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/07/07/post3/" title="如何解决Hexo推送失败"><img data-lazy-src="https://s1.ax1x.com/2020/11/08/BoCVRH.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="如何解决Hexo推送失败"/></a><div class="content"><a class="title" href="/2020/07/07/post3/" title="如何解决Hexo推送失败">如何解决Hexo推送失败</a><time datetime="2020-07-07T20:37:12.000Z" title="发表于 2020-07-07 20:37:12">2020-07-07</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By 保温杯</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>(()=>{
+  const $countDom = document.getElementById('twikoo-count')
+  const init = () => {
+    let initData = {
+      envId: 'baowenbei-8gamr6041a5371f9',
+      el: '#twikoo-wrap'
+    }
+
+    if (false) {
+      const otherData = false
+      initData = Object.assign(initData, otherData)
+    }
+    
+    twikoo.init(initData)
+  }
+
+  const getCount = () => {
+    twikoo.getCommentsCount({
+      envId: 'baowenbei-8gamr6041a5371f9',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      $countDom.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const loadTwikoo = (bool = false) => {
+    if (typeof twikoo === 'object') {
+      init()
+      bool && $countDom && setTimeout(getCount,0)
+    } else {
+      getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(()=> {
+        init()
+        bool && $countDom && setTimeout(getCount,0)
+      })
+    }
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo(true)
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="https://cdn.jsdelivr.net/gh/fuckzuoye/fuckzuoye.github.io/js/script.js"></script><script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script><script id="xplayer" src="https://music.xingyaox.com/api/PlayerJs/id/5f95113acf71e" ></script><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script><script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/702d5c3d.js","daovoice")
+</script><script>var isChatBtn = false
+daovoice('init', {
+  app_id: '702d5c3d',},{
+  launcher: { 
+     disableLauncherIcon: isChatBtn // 悬浮 ICON 是否显示
+  },
+});
+daovoice('update');
+
+if (isChatBtn) {
+  var chatBtnFn = () => {
+    var chatBtn = document.getElementById("chat_btn")
+    chatBtn.addEventListener("click", function(){
+      daovoice('show')
+    });
+  }
+  chatBtnFn()
+} else {
+  if (false) {
+    function chatBtnHide () {
+      daovoice('update', {},{
+        launcher: { 
+        disableLauncherIcon: true // 悬浮 ICON 是否显示
+        },
+      });
+    }
+    function chatBtnShow () {
+      daovoice('update', {},{
+        launcher: { 
+        disableLauncherIcon: false // 悬浮 ICON 是否显示
+        },
+      });
+    }
+  }
+}</script></div></body></html>

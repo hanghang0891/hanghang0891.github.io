@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>保温杯的部落格</title>
+  <icon>https://blog.1357.ga/img/icon.png</icon>
+  
+  <link href="https://blog.1357.ga/rss.xml" rel="self"/>
+  
+  <link href="https://blog.1357.ga/"/>
+  <updated>2021-02-27T15:40:39.666Z</updated>
+  <id>https://blog.1357.ga/</id>
+  
+  <author>
+    <name>保温杯</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>标题怎么这么难取...</title>
+    <link href="https://blog.1357.ga/2021/02/27/post7/"/>
+    <id>https://blog.1357.ga/2021/02/27/post7/</id>
+    <published>2021-02-27T22:30:00.000Z</published>
+    <updated>2021-02-27T15:40:39.666Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;h4 id=&quot;我现在心情很不好&quot;&gt;&lt;a href=&quot;#我现在心情很不好&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="随笔" scheme="https://blog.1357.ga/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>期末考试进行时</title>
+    <link href="https://blog.1357.ga/2021/01/23/post6/"/>
+    <id>https://blog.1357.ga/2021/01/23/post6/</id>
+    <published>2021-01-23T15:29:37.000Z</published>
+    <updated>2021-02-27T15:40:39.666Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;好久不见，我又来水文章了🤣&lt;/p&gt;
+&lt;p&gt;由于学业繁重（个屁），都快忘了自己还有个博客了😩&lt;/p&gt;
+&lt;p&gt;最近刚刚经历了期末考，放松了几天，才想起来还要更新博客这件事😅我就屁颠屁颠的跑来水文章了&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;PS</summary>
+        
+      
+    
+    
+    
+    
+    <category term="考试" scheme="https://blog.1357.ga/tags/%E8%80%83%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何给pip换个源</title>
+    <link href="https://blog.1357.ga/2020/11/06/post5/"/>
+    <id>https://blog.1357.ga/2020/11/06/post5/</id>
+    <published>2020-11-06T18:38:50.000Z</published>
+    <updated>2021-02-27T15:40:39.666Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;什么是pip&quot;&gt;&lt;a href=&quot;#什么是pip&quot; class=&quot;headerlink&quot; title=&quot;什么是pip?&quot;&gt;&lt;/a&gt;什么是pip?&lt;/h2&gt;&lt;p&gt;pip 是一个 Python</summary>
+        
+      
+    
+    
+    
+    
+    <category term="pip" scheme="https://blog.1357.ga/tags/pip/"/>
+    
+    <category term="python" scheme="https://blog.1357.ga/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何给使用虚拟机#2 之安装Windows系统</title>
+    <link href="https://blog.1357.ga/2020/08/29/post4/"/>
+    <id>https://blog.1357.ga/2020/08/29/post4/</id>
+    <published>2020-08-29T20:32:10.000Z</published>
+    <updated>2021-02-27T15:40:39.666Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;本文章面向小白，个位大佬请勿吐槽&lt;/strong&gt;&lt;br&gt;大家好我是保温杯，我又来&lt;del&gt;水文章&lt;/del&gt;更新了&lt;/p&gt;
+&lt;h2 id=&quot;下载windows镜像：&quot;&gt;&lt;a href=&quot;#下载windows镜像：&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="虚拟机" scheme="https://blog.1357.ga/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何解决Hexo推送失败</title>
+    <link href="https://blog.1357.ga/2020/07/07/post3/"/>
+    <id>https://blog.1357.ga/2020/07/07/post3/</id>
+    <published>2020-07-07T20:37:12.000Z</published>
+    <updated>2021-02-27T15:40:39.666Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;问题描述：&quot;&gt;&lt;a href=&quot;#问题描述：&quot; class=&quot;headerlink&quot; title=&quot;问题描述：&quot;&gt;&lt;/a&gt;问题描述：&lt;/h2&gt;&lt;p&gt;在推送博客的时候，Git给我报了一个错&lt;/p&gt;
+&lt;p&gt;&lt;img src= &quot;/img/loading.gif&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="网站" scheme="https://blog.1357.ga/tags/%E7%BD%91%E7%AB%99/"/>
+    
+    <category term="hexo" scheme="https://blog.1357.ga/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何使用虚拟机#1 之安装虚拟机软件</title>
+    <link href="https://blog.1357.ga/2020/04/29/post2/"/>
+    <id>https://blog.1357.ga/2020/04/29/post2/</id>
+    <published>2020-04-29T14:19:09.000Z</published>
+    <updated>2021-02-27T15:40:39.666Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;今天我要教大家在自己的电脑上安装一个虚拟操作系统（简称虚拟机）&quot;&gt;&lt;a href=&quot;#今天我要教大家在自己的电脑上安装一个虚拟操作系统（简称虚拟机）&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="虚拟机" scheme="https://blog.1357.ga/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何在console输出特殊字符图案</title>
+    <link href="https://blog.1357.ga/2020/04/25/post1/"/>
+    <id>https://blog.1357.ga/2020/04/25/post1/</id>
+    <published>2020-04-25T20:01:33.000Z</published>
+    <updated>2021-02-27T15:40:39.666Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;认识一下控制台（console）&quot;&gt;&lt;a href=&quot;#认识一下控制台（console）&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
